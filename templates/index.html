@@ -25,7 +25,7 @@
                     <a class="nav-link active" aria-current="page" href="/">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/page1">Страница</a>
+                    <a class="nav-link" href="https://github.com/Maurdihen">Ссылка на мой GitHub</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -33,53 +33,54 @@
                         Перейти
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/page1">Страница 1</a></li>
-                        <li><a class="dropdown-item" href="/page1">Страница 2</a></li>
+                        <li><a class="dropdown-item" href="/list">Список предметов</a></li>
+                        <li><a class="dropdown-item" href="https://t.me/My_bot_main_bot">Мой теллеграм бот(он работает только когда я его запушу на своем компе)</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="/page1">Страница 2</a></li>
+                        <li><a class="dropdown-item" href="/teachers">Список учителей</a></li>
                     </ul>
                 </li>
             </ul>
-            <form class="d-flex" method="GET" action="/page4">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" method="GET" action="/search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="s">
                 <button class="btn btn-outline-success" type="submit">Поиск</button>
             </form>
         </div>
     </div>
 </nav>
 
-<p class="text-sm-start">Start aligned text on viewports sized SM (small) or wider.</p>
-
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Day week</th>
+        <th scope="col">Lesson</th>
     </tr>
     </thead>
+    {% for data in datas %}
     <tbody>
     <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <th scope="row">Day week</th>
+        <td colspan="2">{{ data.day_week }}</td>
     </tr>
     <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
+        <th scope="row">Time</th>
+        <td>{{ data.time }}</td>
     </tr>
     <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
+        <th scope="row">Teacher</th>
+        <td colspan="2">{{ data.teacher }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Lesson</th>
+        <td colspan="2">{{ data.discipline }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Department</th>
+        <td colspan="2">{{ data.department }}</td>
     </tr>
     </tbody>
+    {% endfor %}
 </table>
 
 
